@@ -1,0 +1,618 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Serif', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    position: relative;
+    border: 1px solid #ddd;
+}
+
+/* Герб */
+.seal {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 150px;
+    height: 150px;
+    border: 3px solid #0039a6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seal-inner {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0039a6;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+/* Заголовок */
+.document-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #0039a6;
+}
+
+.document-header h1 {
+    font-size: 48px;
+    color: #0039a6;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.document-header h2 {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.document-date {
+    font-size: 18px;
+    color: #333;
+    font-style: italic;
+}
+
+.case-mark {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #ffebee;
+    border: 1px solid #c62828;
+    display: inline-block;
+}
+
+.case-mark span {
+    display: block;
+    font-size: 14px;
+    color: #c62828;
+    font-weight: bold;
+}
+
+/* Фотосекция */
+.photo-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.photo-container {
+    flex: 0 0 300px;
+    position: relative;
+}
+
+.criminal-photo {
+    width: 100%;
+    border: 3px solid #333;
+    filter: grayscale(20%);
+    margin-bottom: 10px;
+}
+
+.photo-label {
+    text-align: center;
+}
+
+.pervert-mark {
+    background-color: #c62828;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.photo-caption {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    padding: 5px;
+}
+
+/* Информация о преступнике */
+.criminal-info {
+    flex: 1;
+}
+
+.criminal-info h3 {
+    color: #0039a6;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 1px solid #0039a6;
+    padding-bottom: 5px;
+}
+
+.info-block {
+    margin-bottom: 25px;
+}
+
+.info-row {
+    display: flex;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-label {
+    width: 200px;
+    font-weight: bold;
+    color: #555;
+}
+
+.info-value {
+    flex: 1;
+}
+
+.warning-red {
+    color: #c62828;
+    font-weight: bold;
+}
+
+.crimes-title {
+    color: #c62828;
+    margin-top: 30px;
+}
+
+.crimes-list {
+    margin-top: 15px;
+}
+
+.crime-item {
+    display: flex;
+    margin-bottom: 15px;
+    border-left: 3px solid #c62828;
+    padding-left: 15px;
+    background-color: #fff5f5;
+    padding: 15px;
+}
+
+.crime-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #c62828;
+    margin-right: 15px;
+    min-width: 40px;
+}
+
+.crime-details {
+    flex: 1;
+}
+
+.crime-details strong {
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.crime-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Доказательства */
+.evidence-section {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.evidence-section h3 {
+    color: #0039a6;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.evidence-item {
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+}
+
+.evidence-title {
+    font-weight: bold;
+    color: #c62828;
+    margin-bottom: 5px;
+}
+
+.evidence-desc {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Текст приговора */
+.verdict-text {
+    margin-bottom: 40px;
+}
+
+.verdict-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.verdict-header h3 {
+    color: #0039a6;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.verdict-body {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.court-composition {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.accused-name {
+    text-align: center;
+    font-size: 20px;
+    color: #c62828;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff5f5;
+    border-left: 5px solid #c62828;
+}
+
+.age-note {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.indent {
+    text-indent: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.expert-list {
+    list-style-type: none;
+    padding-left: 40px;
+    margin: 15px 0;
+}
+
+.expert-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 25px;
+}
+
+.expert-list li:before {
+    content: "•";
+    color: #c62828;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.victims-section {
+    margin: 25px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+}
+
+.victims-section h4 {
+    color: #0039a6;
+    margin-bottom: 15px;
+}
+
+.victims-list {
+    display: grid;
+    gap: 10px;
+}
+
+.victim {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+}
+
+.victim-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.victim-damage {
+    color: #c62828;
+    font-size: 14px;
+}
+
+/* Колония */
+.colony-section {
+    margin: 40px 0;
+    border: 2px solid #333;
+}
+
+.colony-header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.colony-header h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.colony-badge {
+    background-color: #c62828;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.colony-photo {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.colony-info {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.colony-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0039a6;
+    margin-bottom: 10px;
+}
+
+.colony-details {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.colony-rules {
+    font-size: 12px;
+    color: #c62828;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Приговор */
+.sentence-section {
+    margin: 40px 0;
+}
+
+.sentence-section h3 {
+    color: #0039a6;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.articles {
+    margin: 20px 0;
+}
+
+.article-item {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.article-code {
+    width: 250px;
+    font-weight: bold;
+    color: #0039a6;
+}
+
+.article-desc {
+    flex: 1;
+    color: #333;
+}
+
+.main-sentence {
+    margin: 30px 0;
+    padding: 30px;
+    background-color: #0039a6;
+    color: white;
+    text-align: center;
+}
+
+.sentence-header {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.sentence-term {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.sentence-details {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.additional-sentence {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+}
+
+.additional-sentence ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.additional-sentence li {
+    padding: 5px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sentence-note {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff8e1;
+    border-left: 4px solid #ff9800;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Подписи */
+.signatures {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0 40px;
+    padding-top: 30px;
+    border-top: 2px solid #0039a6;
+}
+
+.signature-block {
+    text-align: center;
+    flex: 1;
+    padding: 0 20px;
+}
+
+.signature-line {
+    width: 200px;
+    height: 1px;
+    background-color: #333;
+    margin: 30px auto 10px;
+}
+
+.signature-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.signature-position {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.signature-person {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0039a6;
+    text-transform: uppercase;
+}
+
+/* Футер */
+.document-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-warning {
+    color: #c62828;
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 12px;
+}
+
+.footer-seal {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #0039a6;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.footer-seal span {
+    display: block;
+    font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .photo-section {
+        flex-direction: column;
+    }
+    
+    .photo-container {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .signatures {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .document-header h1 {
+        font-size: 36px;
+    }
+    
+    .sentence-term {
+        font-size: 28px;
+    }
+    
+    .article-item {
+        flex-direction: column;
+    }
+    
+    .article-code {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

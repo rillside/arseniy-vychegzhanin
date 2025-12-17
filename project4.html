@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исковое заявление № 47-2025 - Кировский городской суд</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 20px;
+        }
+        
+        .court-name {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #8B0000;
+            margin-bottom: 10px;
+        }
+        
+        .case-number {
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+            margin: 20px 0;
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #8B0000;
+        }
+        
+        .document-title {
+            font-size: 22px;
+            text-align: center;
+            margin: 30px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .parties-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            gap: 30px;
+        }
+        
+        .party {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        
+        .party-title {
+            font-weight: bold;
+            color: #8B0000;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        .hidden-info {
+            background: #ffefef;
+            padding: 5px;
+            border: 1px dashed #ccc;
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+        
+        .photos-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .photo-container {
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            border: 2px solid #8B0000;
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+        
+        .photo-frame {
+            width: 230px;
+            height: 280px;
+            margin: 0 auto 15px;
+            border: 3px solid #000;
+            background: white;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .photo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+        
+        .photo-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            width: 90%;
+        }
+        
+        .photo-label {
+            font-weight: bold;
+            color: #8B0000;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .istec-label {
+            color: #0066cc;
+            border: 2px solid #0066cc;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background: #e6f3ff;
+        }
+        
+        .otvetchik-label {
+            color: #8B0000;
+            border: 2px solid #8B0000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background: #ffe6e6;
+        }
+        
+        .claims-section {
+            margin: 40px 0;
+            padding: 25px;
+            background: #fff8f8;
+            border: 1px solid #ffcccc;
+            border-left: 5px solid #8B0000;
+        }
+        
+        .claims-title {
+            color: #8B0000;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .absurd-incident {
+            background: #fff0f0;
+            border: 2px dashed #ff0000;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .absurd-title {
+            color: #ff0000;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        .absurd-incident:before {
+            content: "⚠";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: #ff0000;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .evidence-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f0f8ff;
+            border: 1px solid #cce0ff;
+        }
+        
+        .evidence-list {
+            list-style: none;
+        }
+        
+        .evidence-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .compensation {
+            margin: 30px 0;
+            padding: 25px;
+            background: #fffff0;
+            border: 2px solid #ffd700;
+            border-radius: 5px;
+        }
+        
+        .compensation-title {
+            color: #b8860b;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .signature-section {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #000;
+        }
+        
+        .signature-line {
+            margin-top: 100px;
+            text-align: right;
+            border-top: 1px solid #000;
+            width: 400px;
+            margin-left: auto;
+            padding-top: 5px;
+        }
+        
+        .stamp {
+            position: absolute;
+            bottom: 50px;
+            left: 100px;
+            width: 150px;
+            height: 150px;
+            border: 2px solid #8B0000;
+            border-radius: 50%;
+            text-align: center;
+            padding: 20px;
+            opacity: 0.7;
+            font-size: 12px;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="court-name">Кировский городской суд Кировской области</div>
+            <div>Российская Федерация, 610000, г. Киров, ул. Дерендяева, д. 23</div>
+        </div>
+        
+        <div class="case-number">ИСКОВОЕ ЗАЯВЛЕНИЕ № 47-2025/И<br>поступило в суд: 15.12.2025</div>
+        
+        <div class="document-title">ИСКОВОЕ ЗАЯВЛЕНИЕ<br>о компенсации морального вреда</div>
+        
+        <div class="parties-section">
+            <div class="party">
+                <div class="party-title">ИСТЕЦ:</div>
+                <p><strong>Менчиков Максим Константинович</strong></p>
+                <p>Дата рождения: 14.08.2009</p>
+                <p>Адрес: г. Киров, ул. Московская, д. 45, кв. 8</p>
+                <div class="hidden-info">Контактные данные скрыты в целях безопасности</div>
+                <div class="hidden-info">Паспортные данные предоставлены в суд</div>
+            </div>
+            
+            <div class="party">
+                <div class="party-title">ОТВЕТЧИК:</div>
+                <p><strong>Вычегжанин Арсений Константинович</strong></p>
+                <p>Дата рождения: 07.05.2009</p>
+                <p>Адрес: г. Киров, ул. Московская, д. 47, кв. 12</p>
+                <div class="hidden-info">Контактные данные скрыты в целях безопасности</div>
+                <div class="hidden-info">Паспортные данные предоставлены в суд</div>
+            </div>
+        </div>
+        
+        <div class="photos-section">
+            <div class="photo-container">
+                <div class="photo-frame">
+                    <img src="menchikov_photo.jpg" alt="Истец Менчиков М.К." class="photo-image" id="istecPhoto">
+                    <div class="photo-placeholder" id="istecPlaceholder">
+                        ФОТО ИСТЦА<br>
+                        Менчиков Максим Константинович<br>
+                        (файл: menchikov_photo.jpg)
+                    </div>
+                </div>
+                <div class="photo-label">
+                    <div class="istec-label">ИСТЕЦ</div>
+                </div>
+            </div>
+            
+            <div class="photo-container">
+                <div class="photo-frame">
+                    <img src="vychegzhanin_sud.jpg" alt="Ответчик Вычегжанин А.К." class="photo-image" id="otvetchikPhoto">
+                    <div class="photo-placeholder" id="otvetchikPlaceholder">
+                        ФОТО ОТВЕТЧИКА<br>
+                        Вычегжанин Арсений Константинович<br>
+                        (файл: vychegzhanin_sud.jpg)
+                    </div>
+                </div>
+                <div class="photo-label">
+                    <div class="otvetchik-label">ОТВЕТЧИК</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="claims-section">
+            <div class="claims-title">ОБСТОЯТЕЛЬСТВА ДЕЛА:</div>
+            <p style="margin-bottom: 15px;">16 декабря 2025 года, примерно в 16:30, в подъезде дома по ул. Московской, д. 45, ответчик Вычегжанин А.К., находясь в состоянии эмоционального возбуждения, безосновательно обвинил меня, истца Менчикова М.К., в краже его электронной сигареты модели "XROS" стоимостью примерно 1 500 рублей.</p>
+            
+            <p style="margin-bottom: 15px;">Несмотря на мои попытки разъяснить, что я не брал и даже не видех указанную сигарету, ответчик начал угрожать мне физической расправой, используя нецензурную лексику и обещая "разобраться" со мной.</p>
+            
+            <div class="absurd-incident">
+                <div class="absurd-title">ИНЦИДЕНТ С ПЕРЦОВЫМ БАЛЛОНЧИКОМ</div>
+                <p>В процессе конфликта, демонстрируя имеющийся у него перцовый баллончик, ответчик заявил: "Сейчас я тебе морду перцем обработаю!".</p>
+                <p><strong>В ходе неумелой демонстрации оружия</strong>, ответчик, держа баллончик <strong>перевернутым</strong> (соплом к себе), нажал на спусковой механизм, направляя струю перцового газа себе в лицо. В результате ответчик получил химический ожог слизистых оболочек глаз и дыхательных путей легкой степени тяжести.</p>
+            </div>
+            
+            <div class="absurd-incident">
+                <div class="absurd-title">ИНЦИДЕНТ С НОЖОМ-БАБОЧКОЙ</div>
+                <p>После первой неудачи, желая продемонстрировать "крутость", ответчик достал из кармана нож-бабочку (treasurer butterfly knife) и начал выполнять трюки, заявив: "Вот сейчас покажу, как надо!".</p>
+                <p><strong>При попытке выполнить трюк "around the world"</strong>, ответчик не рассчитал траекторию, и нож, описав дугу, <strong>рукояткой ударил его по лбу</strong>, оставив синяк диаметром 3 см. Нож при этом выскользнул из рук и упал в мусоропровод, что подтверждается свидетельскими показаниями.</p>
+            </div>
+            
+            <p style="margin-top: 20px;">Однако в процессе данных инцидентов <strong>перцовый газ распространился в ограниченном пространстве подъезда</strong>, пропитав мою одежду (куртку, джинсы), обувь и личные вещи (рюкзак), а также волосы. Несмотря на то, что я не был непосредственной целью воздействия, концентрация газа была достаточной для возникновения у меня:</p>
+            <ul style="margin: 15px 0 15px 20px;">
+                <li>Слезотечения и рези в глазах в течение 2 часов</li>
+                <li>Першения в горле и кашля</li>
+                <li>Сильного запаха перца на одежде и вещах, не удаляемого при обычной стирке</li>
+                <li>Психологического дискомфорта от наблюдения абсурдной ситуации</li>
+            </ul>
+        </div>
+        
+        <div class="evidence-section">
+            <div class="claims-title">ДОКАЗАТЕЛЬСТВА:</div>
+            <ul class="evidence-list">
+                <li>Запись с камеры видеонаблюдения подъезда (имеется у управляющей компании)</li>
+                <li>Показания свидетелей: Петров И.С. (сосед, кв. 10), Сидорова М.П. (соседка, кв. 9)</li>
+                <li>Акт осмотра места происшествия участковым уполномоченным Романовым П.И.</li>
+                <li>Медицинская справка из травмпункта №3 г. Кирова о получении ответчиком химического ожога и ушиба лба</li>
+                <li>Заключение химической экспертизы о наличии следов капсаицина на одежде истца</li>
+                <li>Чеки на химчистку одежды и обуви истца</li>
+                <li>Фотография синяка на лбу ответчика (предоставлена свидетелем)</li>
+                <li>Акт о извлечении ножа-бабочки из мусоропровода (от 16.12.2025)</li>
+                <li>Фотографии истца и ответчика (прилагаются)</li>
+            </ul>
+        </div>
+        
+        <div class="compensation">
+            <div class="compensation-title">ТРЕБОВАНИЯ ИСТЦА:</div>
+            <p>На основании изложенного, руководствуясь статьями 1064, 1099-1101 Гражданского кодекса РФ,</p>
+            
+            <p style="margin: 20px 0; font-weight: bold; text-align: center; font-size: 16px;">ПРОШУ СУД:</p>
+            
+            <ol style="margin: 20px 0 20px 20px;">
+                <li>Взыскать с ответчика Вычегжанина Арсения Константиновича в мою пользу компенсацию морального вреда в размере <strong>30 000 (тридцати тысяч) рублей</strong> за причиненные физические и нравственные страдания, включая стресс от наблюдения нелепых действий ответчика.</li>
+                <li>Взыскать судебные расходы в размере <strong>3 500 (трех тысяч пятисот) рублей</strong> (госпошлина + услуги представителя).</li>
+                <li>Взыскать расходы на химчистку одежды и обуви в размере <strong>2 800 (двух тысяч восьмисот) рублей</strong>.</li>
+                <li>Взыскать стоимость новой куртки, испорченной запахом перца, в размере <strong>4 200 (четырех тысяч двухсот) рублей</strong>.</li>
+            </ol>
+            
+            <p style="margin-top: 20px; text-align: center; font-weight: bold;">ИТОГО К ВЗЫСКАНИЮ: 40 500 рублей</p>
+            
+            <p style="margin-top: 15px; font-style: italic; color: #666; text-align: center;">* Компенсация за моральный вред увеличена в связи с абсурдностью ситуации и дополнительным психологическим воздействием</p>
+        </div>
+        
+        <div class="signature-section">
+            <p><strong>ПРИЛОЖЕНИЯ:</strong></p>
+            <ol style="margin: 15px 0 15px 20px;">
+                <li>Копия искового заявления для ответчика</li>
+                <li>Копия паспорта истца (в судебном деле)</li>
+                <li>Квитанция об оплате госпошлины</li>
+                <li>Чеки на химчистку и покупку новой куртки</li>
+                <li>Копия медицинской справки</li>
+                <li>Копия акта осмотра места происшествия</li>
+                <li>Фотография синяка ответчика</li>
+                <li>Акт об извлечении ножа из мусоропровода</li>
+            </ol>
+            
+            <div class="signature-line">
+                Истец: ___________________ /Менчиков М.К./
+            </div>
+        </div>
+        
+        <div class="stamp">
+            КИРОВСКИЙ<br>
+            ГОРОДСКОЙ СУД<br>
+            ПОЛУЧЕНО<br>
+            16.12.2025<br>
+            ВХ. № 24718
+        </div>
+        
+        <div class="footer">
+            <p>Документ сформирован автоматически. Оригинал искового заявления с подписью истца хранится в канцелярии суда.</p>
+            <p>Копия направлена ответчику по адресу: г. Киров, ул. Московская, д. 47, кв. 12</p>
+            <p style="margin-top: 10px; color: #8B0000; font-weight: bold;">ВАЖНО: Все контактные и паспортные данные сторон хранятся в материалах судебного дела и не подлежат публикации.</p>
+        </div>
+    </div>
+
+    <script>
+        // Функция для проверки загрузки фото
+        function checkPhoto(photoId, placeholderId) {
+            var img = document.getElementById(photoId);
+            var placeholder = document.getElementById(placeholderId);
+            
+            if (img.complete && img.naturalWidth > 0) {
+                placeholder.style.display = 'none';
+                img.style.display = 'block';
+                return true;
+            }
+            return false;
+        }
+        
+        // Проверка обоих фото при загрузке
+        window.onload = function() {
+            checkPhoto('istecPhoto', 'istecPlaceholder');
+            checkPhoto('otvetchikPhoto', 'otvetchikPlaceholder');
+            
+            // Если фото не загружены сразу, проверяем через короткое время
+            setTimeout(function() {
+                checkPhoto('istecPhoto', 'istecPlaceholder');
+                checkPhoto('otvetchikPhoto', 'otvetchikPlaceholder');
+            }, 100);
+        };
+        
+        // Обработка ошибок загрузки
+        document.getElementById('istecPhoto').onerror = function() {
+            document.getElementById('istecPlaceholder').style.display = 'block';
+        };
+        
+        document.getElementById('otvetchikPhoto').onerror = function() {
+            document.getElementById('otvetchikPlaceholder').style.display = 'block';
+        };
+    </script>
+</body>
+
+</html>

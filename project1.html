@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выборы Президента Украины 2024 - Кандидат Вычегжанин А.К.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #005bbb 0%, #ffd500 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            border: 5px solid #005bbb;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            color: #005bbb;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 #ffd500;
+            letter-spacing: 2px;
+        }
+        
+        .header h2 {
+            font-size: 24px;
+            color: #ffd500;
+            background: #005bbb;
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+        
+        .ukraine-flag {
+            height: 10px;
+            background: linear-gradient(to right, #005bbb 50%, #ffd500 50%);
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .candidate-info {
+            display: flex;
+            gap: 40px;
+            margin: 40px 0;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .photo-section {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+        
+        .photo-frame {
+            width: 300px;
+            height: 400px;
+            border: 10px solid #ffd500;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #f0f0f0;
+            position: relative;
+        }
+        
+        .candidate-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .photo-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+            text-align: center;
+            font-size: 14px;
+            width: 80%;
+        }
+        
+        .photo-label {
+            font-size: 20px;
+            color: #005bbb;
+            font-weight: bold;
+            background: #ffd500;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .program-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .stupid-program {
+            background: #f8f9fa;
+            border: 3px dashed #005bbb;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .program-title {
+            color: #ffd500;
+            background: #005bbb;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .program-point {
+            background: white;
+            border-left: 5px solid #ffd500;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            font-size: 18px;
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .program-point:before {
+            content: "😂";
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+        }
+        
+        .stupid-quote {
+            background: linear-gradient(45deg, #ffd500, #ffed4e);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 22px;
+            font-style: italic;
+            border: 3px solid #005bbb;
+            color: #005bbb;
+            font-weight: bold;
+        }
+        
+        .personal-info {
+            background: #e8f4ff;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 3px solid #005bbb;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .info-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ffd500;
+        }
+        
+        .info-label {
+            color: #005bbb;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .call-to-action {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #005bbb, #003d82);
+            border-radius: 20px;
+            color: white;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ffd500;
+            color: #005bbb;
+            padding: 20px 50px;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            border: 5px solid white;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .cta-button:hover {
+            background: #ffed4e;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255,213,0,0.5);
+        }
+        
+        .stupid-promises {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .promise-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 3px solid #005bbb;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .promise-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .promise-card:before {
+            content: "🤪";
+            font-size: 40px;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            opacity: 0.2;
+        }
+        
+        .promise-title {
+            color: #005bbb;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .social-proof {
+            background: #ffd500;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            border: 3px dashed #005bbb;
+        }
+        
+        .testimonial {
+            font-size: 18px;
+            font-style: italic;
+            margin: 15px 0;
+            color: #005bbb;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #003d82;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 3px solid #ffd500;
+            color: #005bbb;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 32px;
+            }
+            
+            .candidate-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .photo-section {
+                flex: 0 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ВЫБОРЫ ПРЕЗИДЕНТА УКРАИНЫ 2026</h1>
+            <div class="ukraine-flag"></div>
+            <h2>ОФИЦИАЛЬНЫЙ КАНДИДАТ: ВЫЧЕГЖАНИН АРСЕНИЙ КОНСТАНТИНОВИЧ</h2>
+        </div>
+        
+        <div class="stupid-quote">
+            "Я сделаю так, что в каждом холодильнике будет по два борща! И бесплатный страпон в каждой бане!"
+        </div>
+        
+        <div class="candidate-info">
+            <div class="photo-section">
+                <div class="photo-frame">
+                    <img src="vychegzhanin_photo.jpg" alt="Вычегжанин Арсений" class="candidate-photo" onerror="document.querySelector('.photo-placeholder').style.display='block'">
+                    <div class="photo-placeholder">
+                        ФОТО КАНДИДАТА<br>
+                        (файл: vychegzhanin_photo.jpg)<br>
+                        Рекомендуемый размер: 300×400 px
+                    </div>
+                </div>
+                <div class="photo-label">"ВОТ Я КАКОЙ!"</div>
+            </div>
+            
+            <div class="program-section">
+                <div class="stupid-program">
+                    <div class="program-title">Моя Гениальная Программа</div>
+                    
+                    <div class="program-point">
+                        Отменить домашние задания в школах - учителя сами пусть делают!
+                    </div>
+                    
+                    <div class="program-point">
+                        Ввести 4-дневную учебную неделю, а пятница - день петуха (в честь меня)
+                    </div>
+                    
+                    <div class="program-point">
+                        Бесплатный шаурма для всех граждан по понедельникам
+                    </div>
+                    
+                    <div class="program-point">
+                        Предоставить право легально совокупляться в школе
+                    </div>
+                    
+                    <div class="program-point">
+                        Построить горку от Киева до Львова для быстрого перемещения
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="personal-info">
+            <h3 style="color: #005bbb; margin-bottom: 20px; text-align: center; font-size: 24px;">ОФИЦИАЛЬНЫЕ ДАННЫЕ КАНДИДАТА</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">ФИО:</div>
+                    <div style="font-size: 20px; font-weight: bold; color: #005bbb;">Вычегжанин Арсений Константинович</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Дата рождения:</div>
+                    <div style="font-size: 18px;">07.05.2009 (всего 16 лет!)</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Место рождения:</div>
+                    <div style="font-size: 18px;">Новая Каховка - самое крутое село!</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Образование:</div>
+                    <div style="font-size: 18px;">9 классов школы (почти как университет)</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Опыт работы:</div>
+                    <div style="font-size: 18px;">Играл в мафию в школе - знаю, как руководить. Хотя в основном падала шлюха</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Хобби:</div>
+                    <div style="font-size: 18px;">TikTok, майнкрафт, споры с мамой про уроки, рукоблудство, эксгибиционизм у женских туалетов  </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stupid-promises">
+            <div class="promise-card">
+                <div class="promise-title">ЭКОНОМИКА</div>
+                <p>Ввести валюту "гривна-копейка" - одна сторона для покупок, другая для сохранения</p>
+            </div>
+            
+            <div class="promise-card">
+                <div class="promise-title">ОБРАЗОВАНИЕ</div>
+                <p>Оценки ставить через постель, а не по знаниям</p>
+            </div>
+            
+            <div class="promise-card">
+                <div class="promise-title">СЕЛЬСКОЕ ХОЗЯЙСТВО</div>
+                <p>Каждой корове - по планшету, чтобы смотреть порнуху во время дойки</p>
+            </div>
+            
+            <div class="promise-card">
+                <div class="promise-title">ТРАНСПОРТ</div>
+                <p>Бесплатный бензин для тех, у кого в машине играет украинский рэп</p>
+            </div>
+        </div>
+        
+        <div class="social-proof">
+            <h3 style="color: #005bbb; margin-bottom: 20px;">ЧТО ГОВОРЯТ О ПИДОРАСЕ</h3>
+            
+            <div class="testimonial">
+                "Он единственный, кто понял, что главная проблема страны - нелегальность совокупления в школах!"
+                <div class="testimonial-author">- Артур, 16 лет, парень</div>
+            </div>
+            
+            <div class="testimonial">
+                "Я за него, потому что у него крутой никнейм в онлайн-игре!"
+                <div class="testimonial-author">- Максим, 16 лет, геймер</div>
+            </div>
+            
+            <div class="testimonial">
+                "Арсений обещал, что если станет президентом, он снимется в новом ролике Джони Синса!"
+                <div class="testimonial-author">- Вся группа РПО 9/1 25/1</div>
+            </div>
+        </div>
+        
+        <div class="stupid-quote">
+            "Я не политик, я - пидор! Голосуйте за меня, а то я могу случайно и отсосать!"
+        </div>
+        
+        <div class="call-to-action">
+            <h2 style="font-size: 36px; margin-bottom: 20px;">ГОЛОСУЙ ЗА НАСТОЯЩЕГО ПИДОРАСА!</h2>
+            <p style="font-size: 20px; margin-bottom: 20px;">Он понимает молодежь, потому что у самого ещё хуй не выросс!</p>
+            <a href="#" class="cta-button" onclick="alert('Спасибо за голос! Теперь ты крутой! 😎')">ГОЛОСОВАТЬ ЗА НАШЕГО ПИДОРА</a>
+            <p style="margin-top: 20px; font-size: 16px; opacity: 0.8;">*Для голосования достаточно подписки на BRAZZERS</p>
+        </div>
+        
+        <div class="footer">
+            <p>Официальная страница кандидата в президенты Украины Вычегжанина Арсения Константиновича</p>
+            <p>Возраст: 16 лет | Родной город: Новая Каховка | Девиз: "Сдадим Родину!"</p>
+        </div>
+    </div>
+
+    <script>
+        // Замена фото при ошибке загрузки
+        document.querySelector('.candidate-photo').onerror = function() {
+            document.querySelector('.photo-placeholder').style.display = 'block';
+        };
+        
+        // Проверка загрузки фото
+        window.onload = function() {
+            var img = document.querySelector('.candidate-photo');
+            if (img.complete && img.naturalWidth > 0) {
+                document.querySelector('.photo-placeholder').style.display = 'none';
+            }
+        };
+        
+        // Добавляем случайные эмодзи к обещаниям
+        document.querySelectorAll('.program-point').forEach(function(item, index) {
+            const emojis = ['😂', '🤣', '😭', '🤪', '🥴', '🤡', '💩', '🙈', '🍕', '🎮'];
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            item.style.paddingLeft = '60px';
+            item.innerHTML = '<span style="position:absolute; left:15px; top:50%; transform:translateY(-50%); font-size:24px;">' + randomEmoji + '</span>' + item.innerHTML;
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+

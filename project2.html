@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РОЗЫСКНОЕ ДЕЛО - УМВД по г. Киров</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border: 3px double #000;
+            padding: 30px;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #8B0000;
+        }
+        
+        .header h2 {
+            font-size: 18px;
+            color: #333;
+            font-weight: normal;
+        }
+        
+        .case-number {
+            background: #8B0000;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .photo-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #8B0000;
+            background: #f9f9f9;
+        }
+        
+        .photo-frame {
+            width: 300px;
+            height: 400px;
+            margin: 0 auto 20px;
+            border: 3px solid #000;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        #photoImage {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+        }
+        
+        .photo-placeholder {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .photo-caption {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #8B0000;
+        }
+        
+        .crime-details {
+            background: #f9f9f9;
+            border-left: 4px solid #8B0000;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .crime-details h3 {
+            color: #8B0000;
+            margin-bottom: 15px;
+        }
+        
+        .charges {
+            background: #fff8dc;
+            border: 1px solid #ffd700;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .charges ul {
+            list-style: none;
+        }
+        
+        .charges li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .personal-data {
+            background: #e6f3ff;
+            border: 1px solid #0066cc;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .data-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 10px;
+        }
+        
+        .data-label {
+            font-weight: bold;
+            color: #0066cc;
+        }
+        
+        .warning {
+            background: #ffcccc;
+            border: 2px solid #ff0000;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+        
+        .signature-block {
+            margin-top: 40px;
+            text-align: right;
+        }
+        
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 300px;
+            margin: 40px 0 5px auto;
+            padding-top: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Министерство внутренних дел Российской Федерации</h1>
+            <h2>Управление МВД России по Кировской области</h2>
+            <h2>ОТДЕЛ УГОЛОВНОГО РОЗЫСКА</h2>
+        </div>
+        
+        <div class="case-number">
+            РОЗЫСКНОЕ ДЕЛО № 47-18/2025-УГР
+        </div>
+        
+        <div class="photo-container">
+            <div class="photo-frame">
+                <div class="photo-placeholder" id="photoPlaceholder">
+                    ФОТО РАЗЫСКИВАЕМОГО<br>
+                    (файл: фото_вычегжанин.jpg)
+                </div>
+                <img id="photoImage" class="photo-image" src="фото_вычегжанин.jpg" alt="Фото Вычегжанина А.К." onerror="document.getElementById('photoPlaceholder').style.display='block'; this.style.display='none';">
+            </div>
+            <div class="photo-caption">ВЫЧЕГЖАНИН АРСЕНИЙ КОНСТАНТИНОВИЧ</div>
+        </div>
+        
+        <div class="crime-details">
+            <h3>СОБЫТИЯ ПРЕСТУПЛЕНИЯ</h3>
+            <p>10 декабря 2025 года, приблизительно в 23:45, в частном секторе по улице Ленина, г. Киров, произошло жестокое преступление:</p>
+            <ol style="margin: 15px 0 15px 20px;">
+                <li>Незаконное проникновение на территорию частного домовладения</li>
+                <li>Хищение петуха породы "Орловская ситцевая" (стоимостью 15 000 ₽)</li>
+                <li>Совершение насильственных действий в отношении животного</li>
+                <li>Умышленное убийство животного с особой жестокостью</li>
+            </ol>
+            <p>На месте преступления обнаружены вещественные доказательства: биологические следы, отпечатки пальцев, личные вещи подозреваемого.</p>
+        </div>
+        
+        <div class="personal-data">
+            <h3 style="color: #0066cc;">ДАННЫЕ РАЗЫСКИВАЕМОГО</h3>
+            <div class="data-grid">
+                <div class="data-label">ФИО:</div>
+                <div>Вычегжанин Арсений Константинович</div>
+                
+                <div class="data-label">Дата рождения:</div>
+                <div>7 мая 2009 года</div>
+                
+                <div class="data-label">Возраст:</div>
+                <div>16 лет</div>
+                
+                <div class="data-label">Место жительства:</div>
+                <div>Неизвестно</div>
+                
+                <div class="data-label">Приметы:</div>
+                <div>Рост 180-185 см, полный, темные волосы, карие глаза, взгляд туповат</div>
+                
+                <div class="data-label">Особые приметы:</div>
+                <div>Татуировка "Im stupid" на левом предплечье, шрам на подбородке (2 см)</div>
+            </div>
+        </div>
+        
+        <div class="charges">
+            <h3 style="color: #8B0000;">ПРЕДЪЯВЛЯЕМЫЕ ОБВИНЕНИЯ</h3>
+            <ul>
+                <li>Статья 158 ч.2 УК РФ - Кража с причинением значительного ущерба</li>
+                <li>Статья 245 УК РФ - Жестокое обращение с животными</li>
+                <li>Статья 242.1 УК РФ - Изготовление порнографических материалов с животными</li>
+                <li>Статья 167 ч.2 УК РФ - Умышленное уничтожение имущества</li>
+            </ul>
+        </div>
+        
+        <div class="warning">
+            ⚠ ОПАСЕН! ПРИ ОБНАРУЖЕНИИ НЕ ПОДХОДИТЬ, НЕМЕДЛЕННО СООБЩИТЬ В ПОЛИЦИЮ!
+        </div>
+        
+        <div class="contact-info">
+            <h3>КОНТАКТНАЯ ИНФОРМАЦИЯ</h3>
+            <p><strong>Дежурная часть УМВД:</strong> 8 (8332) 58-22-02</p>
+            <p><strong>Телефон доверия:</strong> 8 (8332) 58-11-11</p>
+            <p><strong>Вознаграждение за информацию:</strong> 50 000 рублей</p>
+        </div>
+        
+        <div class="signature-block">
+            <div class="signature-line">
+                НАЧАЛЬНИК ОТДЕЛА УГОЛОВНОГО РОЗЫСКА<br>
+                УМВД РОССИИ ПО КИРОВСКОЙ ОБЛАСТИ<br>
+                ПОЛКОВНИК ПОЛИЦИИ
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <strong>А.Р. ПЕТРОВ</strong><br>
+                (подпись)
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Автопоказ фото при загрузке страницы
+        window.onload = function() {
+            var img = document.getElementById('photoImage');
+            img.onload = function() {
+                document.getElementById('photoPlaceholder').style.display = 'none';
+                img.style.display = 'block';
+            };
+            // Проверяем, загружено ли фото
+            if (img.complete && img.naturalWidth > 0) {
+                document.getElementById('photoPlaceholder').style.display = 'none';
+                img.style.display = 'block';
+            }
+        };
+    </script>
+</body>
+</html>

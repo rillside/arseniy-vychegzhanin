@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Арсений Вычегжанин | Официальный сайт</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 25px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .logo-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* Навигация */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        /* Основной контент */
+        main {
+            min-height: calc(100vh - 200px);
+            padding: 50px 0;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Герой-секция (Главная) */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%232c3e50" fill-opacity="0.05"/></svg>');
+            border-radius: 20px;
+            padding: 60px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h2 span {
+            color: #3498db;
+            position: relative;
+        }
+
+        .hero h2 span:after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(52, 152, 219, 0.2);
+            z-index: -1;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            transition: transform 0.3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 36px;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-image {
+            flex: 0 0 350px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 8px solid white;
+        }
+
+        /* Карточки проектов */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: #f1f8ff;
+            color: #3498db;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Футер */
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: white;
+            padding: 50px 0 30px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: #3498db;
+        }
+
+        .footer-section p {
+            color: #bdc3c7;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #3498db;
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #95a5a6;
+            font-size: 14px;
+        }
+
+        /* Кнопки */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #3498db;
+            color: #3498db;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        /* Стили для контента страниц */
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Стили для фото-контейнеров */
+        .photo-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .photo-frame {
+            width: 300px;
+            height: 400px;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .photo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            width: 90%;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px;
+            }
+            
+            .hero-image {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav a {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 30px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            nav a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+            
+            .page-header h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* Анимация загрузки */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .spinner {
+            width: 70px;
+            height: 70px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Загрузчик -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <h2 style="color: white; margin-top: 20px;">Загрузка визитки...</h2>
+    </div>
+
+    <!-- Шапка -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="arseny_main.jpg" alt="Арсений Вычегжанин">
+                <div class="logo-text">
+                    <h1>Арсений Вычегжанин</h1>
+                    <p>Официальная визитная карточка</p>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="#" class="nav-link" data-page="projects"><i class="fas fa-folder"></i> Проекты</a></li>
+                    <li><a href="#" class="nav-link" data-page="about"><i class="fas fa-user"></i> Обо мне</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact"><i class="fas fa-envelope"></i> Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- Главная страница -->
+        <div id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>Привет, я <span>Арсений Вычегжанин</span></h2>
+                    <p>16-летний подросток из Кирова, чья жизнь полна невероятных приключений, 
+                    неожиданных поворотов и удивительных историй. От кандидата в президенты Украины 
+                    до жертвы белых медведей в Антарктиде — моя жизнь никогда не бывает скучной!</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">16</span>
+                            <span class="stat-label">Возраст</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Проектов</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Приключений</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn" id="viewProjects">
+                        <i class="fas fa-eye"></i> Смотреть проекты
+                    </a>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="arseny_hero.jpg" alt="Арсений Вычегжанин">
+                </div>
+            </div>
+            
+            <div class="page-header">
+                <h2>Мои приключения</h2>
+                <p>За свою короткую, но насыщенную жизнь я успел побывать в самых разных ситуациях</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card" data-project="1">
+                    <div class="project-image" style="background: linear-gradient(135deg, #005bbb 0%, #ffd500 100%);">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Кандидат в президенты Украины</h3>
+                        <p>В 2026 году я баллотировался на пост президента Украины с революционной программой, 
+                        включающей бесплатный шаурма по понедельникам и легализацию совокупления в школах.</p>
+                        <div class="project-tags">
+                            <span class="tag">Политика</span>
+                            <span class="tag">Украина</span>
+                            <span class="tag">Выборы</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-project="2">
+                    <div class="project-image" style="background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Уголовное розыскное дело</h3>
+                        <p>Нахожусь в федеральном розыске УМВД по Кировской области по обвинению 
+                        в краже петуха и жестоком обращении с животными. Дело № 47-18/2025-УГР.</p>
+                        <div class="project-tags">
+                            <span class="tag">Розыск</span>
+                            <span class="tag">Петух</span>
+                            <span class="tag">УМВД</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-project="3">
+                    <div class="project-image" style="background: linear-gradient(135deg, #0039a6 0%, #0055cc 100%);">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Судебный приговор</h3>
+                        <p>Верховный Суд РФ признал меня особо опасным сексуальным преступником 
+                        и приговорил к пожизненному лишению свободы. Дело содержит шокирующие материалы.</p>
+                        <div class="project-tags">
+                            <span class="tag">Суд</span>
+                            <span class="tag">Приговор</span>
+                            <span class="tag">Верховный Суд</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Страница проектов -->
+        <div id="projects" class="page">
+            <div class="page-header">
+                <h2>Все мои проекты</h2>
+                <p>Полный список моих удивительных приключений и достижений</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Проект 1 -->
+                <div class="project-card" data-project="1">
+                    <div class="project-image" style="background: linear-gradient(135deg, #005bbb 0%, #ffd500 100%);">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Выборы Президента Украины 2026</h3>
+                        <p>Официальный кандидат Вычегжанин Арсений Константинович. 
+                        Моя программа: отмена домашних заданий, бесплатный шаурма по понедельникам, 
+                        легализация совокупления в школах.</p>
+                        <div class="project-tags">
+                            <span class="tag">Политика</span>
+                            <span class="tag">Украина</span>
+                            <span class="tag">Выборы 2026</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;" data-view="1">
+                            <i class="fas fa-external-link-alt"></i> Открыть проект
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Проект 2 -->
+                <div class="project-card" data-project="2">
+                    <div class="project-image" style="background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Розыскное дело УМВД</h3>
+                        <p>Дело № 47-18/2025-УГР. Разыскиваюсь за кражу петуха породы "Орловская ситцевая" 
+                        и жестокое обращение с животными. Вознаграждение за информацию: 50 000 рублей.</p>
+                        <div class="project-tags">
+                            <span class="tag">Розыск</span>
+                            <span class="tag">Петух</span>
+                            <span class="tag">Киров</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;" data-view="2">
+                            <i class="fas fa-external-link-alt"></i> Открыть проект
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Проект 3 -->
+                <div class="project-card" data-project="3">
+                    <div class="project-image" style="background: linear-gradient(135deg, #0039a6 0%, #0055cc 100%);">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Судебный приговор</h3>
+                        <p>Приговор № 478-КС/2025-9У. Признан особо опасным сексуальным преступником. 
+                        Пожизненное лишение свободы в колонии "Белый лебедь".</p>
+                        <div class="project-tags">
+                            <span class="tag">Суд</span>
+                            <span class="tag">Приговор</span>
+                            <span class="tag">Пожизненное</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;" data-view="3">
+                            <i class="fas fa-external-link-alt"></i> Открыть проект
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Проект 4 -->
+                <div class="project-card" data-project="4">
+                    <div class="project-image" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Исковое заявление в суд</h3>
+                        <p>Иск № 47-2025/И. Менчиков Максим требует компенсацию за инцидент 
+                        с перцовым баллончиком и ножом-бабочкой. Итого к взысканию: 40 500 рублей.</p>
+                        <div class="project-tags">
+                            <span class="tag">Иск</span>
+                            <span class="tag">Суд</span>
+                            <span class="tag">Компенсация</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;" data-view="4">
+                            <i class="fas fa-external-link-alt"></i> Открыть проект
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Проект 5 -->
+                <div class="project-card" data-project="5">
+                    <div class="project-image" style="background: linear-gradient(135deg, #c9a96e 0%, #b89446 100%);">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Элитный мужской эскорт</h3>
+                        <p>Премиум-услуги сопровождения для искушённых мужчин. 
+                        Работаю в Москве, СПб, Европе. Стоимость услуг: от 3 000 €.</p>
+                        <div class="project-tags">
+                            <span class="tag">Эскорт</span>
+                            <span class="tag">VIP</span>
+                            <span class="tag">Премиум</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;" data-view="5">
+                            <i class="fas fa-external-link-alt"></i> Открыть проект
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Проект 6 -->
+                <div class="project-card" data-project="6">
+                    <div class="project-image" style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Трагедия в Антарктиде</h3>
+                        <p>Нападение белых медведей во время экспедиции. Разрыв анального сфинктера 
+                        3-й степени. Эксклюзивный репортаж с места событий.</p>
+                        <div class="project-tags">
+                            <span class="tag">Антарктида</span>
+                            <span class="tag">Медведи</span>
+                            <span class="tag">Трагедия</span>
+                        </div>
+                        <a href="#" class="btn btn-outline" style="margin-top: 15px;" data-view="6">
+                            <i class="fas fa-external-link-alt"></i> Открыть проект
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Страница "Обо мне" -->
+        <div id="about" class="page">
+            <div class="page-header">
+                <h2>Обо мне</h2>
+                <p>Подробная информация о жизни и деятельности Арсения Вычегжанина</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start;">
+                <div>
+                    <div class="photo-container">
+                        <div class="photo-frame">
+                            <img src="arseny_about.jpg" alt="Арсений Вычегжанин" class="photo-image" 
+                                 onerror="this.style.display='none'; document.getElementById('aboutPlaceholder').style.display='block'">
+                            <div class="photo-placeholder" id="aboutPlaceholder">
+                                ФОТО ДЛЯ СТРАНИЦЫ "ОБО МНЕ"<br>
+                                (файл: arseny_about.jpg)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 20px;">
+                        <h3 style="color: #2c3e50; margin-bottom: 10px;">Арсений Вычегжанин</h3>
+                        <p style="color: #7f8c8d; font-style: italic;">"Моя жизнь — это приключение!"</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="color: #2c3e50; margin-bottom: 20px; font-size: 28px;">Биография</h3>
+                    
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #3498db; margin-bottom: 10px; font-size: 18px;">
+                                <i class="fas fa-user" style="margin-right: 10px;"></i> Основная информация
+                            </h4>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-chevron-right" style="position: absolute; left: 0; color: #3498db;"></i>
+                                    <strong>Полное имя:</strong> Вычегжанин Арсений Константинович
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-chevron-right" style="position: absolute; left: 0; color: #3498db;"></i>
+                                    <strong>Дата рождения:</strong> 7 мая 2009 года (16 лет)
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-chevron-right" style="position: absolute; left: 0; color: #3498db;"></i>
+                                    <strong>Место рождения:</strong> Новая Каховка, Украина
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-chevron-right" style="position: absolute; left: 0; color: #3498db;"></i>
+                                    <strong>Текущее место жительства:</strong> г. Киров, Россия
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #3498db; margin-bottom: 10px; font-size: 18px;">
+                                <i class="fas fa-graduation-cap" style="margin-right: 10px;"></i> Образование
+                            </h4>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-school" style="position: absolute; left: 0; color: #3498db;"></i>
+                                    9 классов средней школы
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-gamepad" style="position: absolute; left: 0; color: #3498db;"></i>
+                                    Самообразование в области компьютерных игр
+                                </li>
+                                <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-users" style="position: absolute; left: 0; color: #3498db;"></i>
+                                    Практический опыт в социальных взаимодействиях
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: #3498db; margin-bottom: 10px; font-size: 18px;">
+                                <i class="fas fa-star" style="margin-right: 10px;"></i> Хобби и интересы
+                            </h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span style="background: #f1f8ff; color: #3498db; padding: 8px 15px; border-radius: 20px; font-size: 14px;">
+                                    <i class="fas fa-gamepad"></i> Видеоигры
+                                </span>
+                                <span style="background: #f1f8ff; color: #3498db; padding: 8px 15px; border-radius: 20px; font-size: 14px;">
+                                    <i class="fas fa-plane"></i> Путешествия
+                                </span>
+                                <span style="background: #f1f8ff; color: #3498db; padding: 8px 15px; border-radius: 20px; font-size: 14px;">
+                                    <i class="fas fa-video"></i> TikTok
+                                </span>
+                                <span style="background: #f1f8ff; color: #3498db; padding: 8px 15px; border-radius: 20px; font-size: 14px;">
+                                    <i class="fas fa-utensils"></i> Кулинария
+                                </span>
+                                <span style="background: #f1f8ff; color: #3498db; padding: 8px 15px; border-radius: 20px; font-size: 14px;">
+                                    <i class="fas fa-music"></i> Музыка
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Страница "Контакты" -->
+        <div id="contact" class="page">
+            <div class="page-header">
+                <h2>Контакты</h2>
+                <p>Свяжитесь со мной для сотрудничества, интервью или просто приятного общения</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px;">
+                <div>
+                    <h3 style="color: #2c3e50; margin-bottom: 25px; font-size: 28px;">Контактная информация</h3>
+                    
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                        <div style="margin-bottom: 30px;">
+                            <h4 style="color: #3498db; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                <i class="fab fa-telegram"></i> Telegram
+                            </h4>
+                            <p style="font-size: 18px; font-weight: 600; color: #2c3e50;">@zlsarseney</p>
+                            <p style="color: #7f8c8d; margin-top: 5px;">Основной способ связи. Отвечаю в течение 15 минут.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h4 style="color: #3498db; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-map-marker-alt"></i> Местоположение
+                            </h4>
+                            <p style="font-size: 18px; font-weight: 600; color: #2c3e50;">г. Киров, Россия</p>
+                            <p style="color: #7f8c8d; margin-top: 5px;">Доступен для встреч по предварительной договоренности.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: #3498db; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-briefcase"></i> Для сотрудничества
+                            </h4>
+                            <p style="color: #7f8c8d;">Открыт к предложениям по:</p>
+                            <ul style="list-style: none; padding-left: 0; margin-top: 10px;">
+                                <li style="margin-bottom: 8px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="position: absolute; left: 0; color: #2ecc71;"></i>
+                                    Интервью для СМИ
+                                </li>
+                                <li style="margin-bottom: 8px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="position: absolute; left: 0; color: #2ecc71;"></i>
+                                    Совместные проекты
+                                </li>
+                                <li style="margin-bottom: 8px; padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="position: absolute; left: 0; color: #2ecc71;"></i>
+                                    Консультации по приключениям
+                                </li>
+                                <li style="padding-left: 25px; position: relative;">
+                                    <i class="fas fa-check" style="position: absolute; left: 0; color: #2ecc71;"></i>
+                                    Эскорт-услуги (премиум)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="color: #2c3e50; margin-bottom: 25px; font-size: 28px;">Отправить сообщение</h3>
+                    
+                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                        <form id="contactForm">
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 600;">
+                                    Ваше имя
+                                </label>
+                                <input type="text" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;" 
+                                       placeholder="Введите ваше имя" required>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 600;">
+                                    Ваш Telegram
+                                </label>
+                                <input type="text" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; transition: border-color 0.3s;" 
+                                       placeholder="@username или номер телефона" required>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 600;">
+                                    Тема сообщения
+                                </label>
+                                <select style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; background: white;">
+                                    <option value="">Выберите тему</option>
+                                    <option value="interview">Предложение об интервью</option>
+                                    <option value="project">Совместный проект</option>
+                                    <option value="question">Вопрос по биографии</option>
+                                    <option value="other">Другое</option>
+                                </select>
+                            </div>
+                            
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 8px; color: #2c3e50; font-weight: 600;">
+                                    Сообщение
+                                </label>
+                                <textarea style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; min-height: 150px; resize: vertical;" 
+                                          placeholder="Напишите ваше сообщение..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" style="width: 100%;">
+                                <i class="fas fa-paper-plane"></i> Отправить сообщение
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Арсений Вычегжанин</h3>
+                    <p>Официальная визитная карточка самого необычного 16-летнего подростка России и Украины.</p>
+                    <p>Моя жизнь — это книга приключений, и эта страница — лишь одна из её глав.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" title="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" title="ВКонтакте"><i class="fab fa-vk"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <p><a href="#" class="nav-link" data-page="home" style="color: #bdc3c7; text-decoration: none;">Главная</a></p>
+                    <p><a href="#" class="nav-link" data-page="projects" style="color: #bdc3c7; text-decoration: none;">Проекты</a></p>
+                    <p><a href="#" class="nav-link" data-page="about" style="color: #bdc3c7; text-decoration: none;">Обо мне</a></p>
+                    <p><a href="#" class="nav-link" data-page="contact" style="color: #bdc3c7; text-decoration: none;">Контакты</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fab fa-telegram" style="margin-right: 10px;"></i> Telegram: @zlsarseney</p>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> г. Киров, Россия</p>
+                    <p><i class="fas fa-birthday-cake" style="margin-right: 10px;"></i> 16 лет</p>
+                    <p><i class="fas fa-star" style="margin-right: 10px;"></i> Национальность: Украинско-русский</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Арсений Вычегжанин. Все права защищены. Любое копирование материалов запрещено.</p>
+                <p style="margin-top: 10px; font-size: 12px;">Сайт создан в исключительно развлекательных целях. Все совпадения с реальными людьми случайны.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для проектов -->
+    <div id="projectModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center;">
+        <div style="background: white; width: 90%; max-width: 900px; max-height: 90vh; border-radius: 20px; overflow: hidden; position: relative;">
+            <div style="padding: 30px; overflow-y: auto; max-height: 80vh;">
+                <div id="modalContent"></div>
+            </div>
+            <button id="closeModal" style="position: absolute; top: 15px; right: 15px; background: #e74c3c; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer;">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Загрузка страницы
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Навигация по страницам
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Удаляем активный класс у всех ссылок
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                
+                // Добавляем активный класс текущей ссылке
+                this.classList.add('active');
+                
+                // Скрываем все страницы
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Показываем выбранную страницу
+                const pageId = this.getAttribute('data-page');
+                document.getElementById(pageId).classList.add('active');
+                
+                // Прокрутка вверх
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Кнопка "Смотреть проекты" на главной
+        document.getElementById('viewProjects').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('.nav-link[data-page="projects"]').click();
+        });
+
+        // Открытие проектов в модальном окне
+        document.querySelectorAll('[data-view]').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const projectId = this.getAttribute('data-view');
+                loadProjectModal(projectId);
+            });
+        });
+
+        // Закрытие модального окна
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('projectModal').style.display = 'none';
+        });
+
+        // Закрытие модального окна при клике вне его
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+        // Загрузка контента проекта в модальное окно
+        function loadProjectModal(projectId) {
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = '<div style="text-align: center; padding: 40px;"><div class="spinner"></div><p>Загрузка проекта...</p></div>';
+            
+            document.getElementById('projectModal').style.display = 'flex';
+            
+            // Имитация загрузки данных
+            setTimeout(function() {
+                let content = '';
+                
+                switch(projectId) {
+                    case '1':
+                        content = `
+                            <h2 style="color: #2c3e50; margin-bottom: 20px;">Выборы Президента Украины 2026</h2>
+                            <div style="background: linear-gradient(135deg, #005bbb 0%, #ffd500 100%); padding: 20px; border-radius: 15px; color: white; margin-bottom: 25px;">
+                                <h3 style="margin-bottom: 15px;">Моя гениальная программа</h3>
+                                <ul style="list-style: none; padding-left: 0;">
+                                    <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                        <i class="fas fa-check" style="position: absolute; left: 0;"></i>
+                                        Отменить домашние задания в школах
+                                    </li>
+                                    <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                        <i class="fas fa-check" style="position: absolute; left: 0;"></i>
+                                        Бесплатный шаурма для всех граждан по понедельникам
+                                    </li>
+                                    <li style="margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                        <i class="fas fa-check" style="position: absolute; left: 0;"></i>
+                                        Предоставить право легально совокупляться в школе
+                                    </li>
+                                </ul>
+                            </div>
+                            <p>Кандидат в президенты Украины Вычегжанин Арсений Константинович предлагает революционную программу изменений, ориентированную на молодежь.</p>
+                            <div style="margin-top: 20px;">
+                                <a href="#" class="btn" onclick="window.open('project1.html', '_blank');">
+                                    <i class="fas fa-external-link-alt"></i> Открыть полный проект
+                                </a>
+                            </div>
+                        `;
+                        break;
+                    case '2':
+                        content = `
+                            <h2 style="color: #2c3e50; margin-bottom: 20px;">Розыскное дело УМВД</h2>
+                            <div style="background: linear-gradient(135deg, #8B0000 0%, #B22222 100%); padding: 20px; border-radius: 15px; color: white; margin-bottom: 25px;">
+                                <h3 style="margin-bottom: 15px;">Дело № 47-18/2025-УГР</h3>
+                                <p>Вычегжанин Арсений Константинович разыскивается за кражу петуха породы "Орловская ситцевая" и жестокое обращение с животными.</p>
+                            </div>
+                            <p>Вознаграждение за информацию: 50 000 рублей. При обнаружении не приближаться, немедленно сообщить в полицию.</p>
+                            <div style="margin-top: 20px;">
+                                <a href="#" class="btn" onclick="window.open('project2.html', '_blank');">
+                                    <i class="fas fa-external-link-alt"></i> Открыть полный проект
+                                </a>
+                            </div>
+                        `;
+                        break;
+                    case '3':
+                        content = `
+                            <h2 style="color: #2c3e50; margin-bottom: 20px;">Судебный приговор</h2>
+                            <div style="background: linear-gradient(135deg, #0039a6 0%, #0055cc 100%); padding: 20px; border-radius: 15px; color: white; margin-bottom: 25px;">
+                                <h3 style="margin-bottom: 15px;">Приговор № 478-КС/2025-9У</h3>
+                                <p>Признан особо опасным сексуальным преступником. Пожизненное лишение свободы в колонии особого режима.</p>
+                            </div>
+                            <p>Верховный Суд РФ вынес приговор по делу, содержащему шокирующие материалы сексуального характера.</p>
+                            <div style="margin-top: 20px;">
+                                <a href="#" class="btn" onclick="window.open('project3.html', '_blank');">
+                                    <i class="fas fa-external-link-alt"></i> Открыть полный проект
+                                </a>
+                            </div>
+                        `;
+                        break;
+                    case '4':
+                        content = `
+                            <h2 style="color: #2c3e50; margin-bottom: 20px;">Исковое заявление в суд</h2>
+                            <div style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); padding: 20px; border-radius: 15px; color: white; margin-bottom: 25px;">
+                                <h3 style="margin-bottom: 15px;">Иск № 47-2025/И</h3>
+                                <p>Менчиков Максим требует компенсацию за инцидент с перцовым баллончиком и ножом-бабочкой.</p>
+                            </div>
+                            <p>Итого к взысканию: 40 500 рублей. Кировский городской суд рассматривает дело.</p>
+                            <div style="margin-top: 20px;">
+                                <a href="#" class="btn" onclick="window.open('project4.html', '_blank');">
+                                    <i class="fas fa-external-link-alt"></i> Открыть полный проект
+                                </a>
+                            </div>
+                        `;
+                        break;
+                    case '5':
+                        content = `
+                            <h2 style="color: #2c3e50; margin-bottom: 20px;">Элитный мужской эскорт</h2>
+                            <div style="background: linear-gradient(135deg, #c9a96e 0%, #b89446 100%); padding: 20px; border-radius: 15px; color: #2c3e50; margin-bottom: 25px;">
+                                <h3 style="margin-bottom: 15px;">Премиум-услуги сопровождения</h3>
+                                <p>Работаю в Москве, СПб, Европе. Стоимость услуг: от 3 000 €.</p>
+                            </div>
+                            <p>Эскорт высшего уровня для искушённых мужчин. Конфиденциальность гарантирована.</p>
+                            <div style="margin-top: 20px;">
+                                <a href="#" class="btn" onclick="window.open('project5.html', '_blank');">
+                                    <i class="fas fa-external-link-alt"></i> Открыть полный проект
+                                </a>
+                            </div>
+                        `;
+                        break;
+                    case '6':
+                        content = `
+                            <h2 style="color: #2c3e50; margin-bottom: 20px;">Трагедия в Антарктиде</h2>
+                            <div style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); padding: 20px; border-radius: 15px; color: white; margin-bottom: 25px;">
+                                <h3 style="margin-bottom: 15px;">Нападение белых медведей</h3>
+                                <p>Разрыв анального сфинктера 3-й степени. Эксклюзивный репортаж с места событий.</p>
+                            </div>
+                            <p>16-летний Арсений Вычегжанин подвергся нападению белых медведей во время экспедиции в Антарктиду.</p>
+                            <div style="margin-top: 20px;">
+                                <a href="#" class="btn" onclick="window.open('project6.html', '_blank');">
+                                    <i class="fas fa-external-link-alt"></i> Открыть полный проект
+                                </a>
+                            </div>
+                        `;
+                        break;
+                    default:
+                        content = '<p>Проект не найден.</p>';
+                }
+                
+                modalContent.innerHTML = content;
+            }, 500);
+        }
+
+        // Обработка формы контактов
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Сообщение отправлено! Я свяжусь с вами в Telegram в ближайшее время.');
+            this.reset();
+        });
+
+        // Карточки проектов на главной
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const projectId = this.getAttribute('data-project');
+                loadProjectModal(projectId);
+            });
+        });
+    </script>
+</body>
+</html>
